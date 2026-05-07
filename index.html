@@ -341,9 +341,22 @@
 <script>
 const posts = [
   {
+    id: 2,
+    title: "Finishing What I Started",
+    date: "7 May 2026",
+    dateVal: 20260507,
+    tag: "Reflection",
+    read: "2 min read",
+    body: `
+      <p>Working when most people would relax seems like a very uncomfortable state to be in and a difficult thing to attempt. Which it is. I am in a phase of life where my college is 3-4 months away and I have a lot of time to kill which majority people spend thinking they will do something productive and end up wasting all of it. I thought it out on a piece of paper and came to a realisation that sounds very normal and obvious but felt really impressive at that point, I can literally learn so much in this free time which can add actual value to my career path and I may end up finding an idea that may lead me to something completely different and interesting than what I have ahead of me.</p>
+      <p>I spent a few minutes on this thought and found that I, like anyone else, think a lot of good things and act on none. I have started to notice this a lot and actually started to try and act upon some things and finish what I started. I have decided to start learning python and I am going to finish it, I am going to understand it from the root. So, this finishing what I started is something I want to induce on my life and actually track it and I think for almost anyone including this skill in your life can be very beneficial if you are doing something you have researched on and will have material value in your life.</p>
+    `
+  },
+  {
     id: 1,
-    title: "22 April 2026 — Ice Breaking",
+    title: "Ice Breaking",
     date: "22 Apr 2026",
+    dateVal: 20260422,
     tag: "Reflection",
     read: "2 min read",
     body: `
@@ -351,7 +364,7 @@ const posts = [
       <p>Contradicting your own thoughts is useful but a pretty delicate thing. It can help, or it can make you lose confidence in yourself. The only way I've found to tackle it is to let the question sit and reflect. Reflecting helps with a lot of things, but the main thing it gives you is clarity about yourself — at least that's what it gave me.</p>
     `
   }
-];
+].sort((a, b) => b.dateVal - a.dateVal);
 
 let prevView = 'home';
 let currentView = 'home';
