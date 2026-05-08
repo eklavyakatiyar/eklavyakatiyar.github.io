@@ -233,11 +233,67 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
+  /* TABLET */
+  @media (max-width: 768px) {
+    .wrap { padding: 0 1.5rem; }
+    .page-heading { padding: 3rem 0 2rem; }
+    .page-heading h1 { font-size: 1.7rem; }
+    footer { padding: 1.25rem 1.5rem; }
+  }
+
+  /* MOBILE */
   @media (max-width: 560px) {
     nav { padding: 0 1.25rem; }
     .wrap { padding: 0 1.25rem; }
-    .page-heading h1 { font-size: 1.55rem; }
+    .page-heading { padding: 2rem 0 1.5rem; }
+    .page-heading h1 { font-size: 1.45rem; }
+    .page-heading p { font-size: 0.85rem; }
     .nav-links { display: none; }
+    .post-body p { font-size: 0.93rem; line-height: 1.8; }
+    .post-header h1 { font-size: 1.3rem; }
+    footer { padding: 1.25rem 1.25rem 6rem; }
+    .post-end { padding-bottom: 6rem; }
+    .post-list { padding-bottom: 6rem; }
+    .placeholder { padding-bottom: 6rem; }
+    .social-row { flex-wrap: wrap; }
+  }
+
+  /* BOTTOM NAV (mobile only) */
+  .bottom-nav {
+    display: none;
+  }
+
+  @media (max-width: 560px) {
+    .bottom-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--line);
+      height: 56px;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .bottom-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      padding: 0 1.2rem;
+      font-size: 0.65rem;
+      color: var(--grey2);
+      letter-spacing: 0.04em;
+      transition: color 0.12s;
+      user-select: none;
+    }
+
+    .bottom-nav-item.active { color: var(--black); }
+
+    .bottom-nav-item svg { width: 18px; height: 18px; }
   }
 </style>
 </head>
@@ -251,6 +307,28 @@
     <li><a href="#" id="nav-projects" onclick="navigate('projects'); return false;">Projects</a></li>
   </ul>
 </nav>
+
+<!-- BOTTOM NAV (mobile) -->
+<div class="bottom-nav">
+  <div class="bottom-nav-item active" id="bnav-about" onclick="navigate('about')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+    </svg>
+    About
+  </div>
+  <div class="bottom-nav-item" id="bnav-posts" onclick="navigate('posts')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 6h16M4 10h16M4 14h10"/>
+    </svg>
+    Posts
+  </div>
+  <div class="bottom-nav-item" id="bnav-projects" onclick="navigate('projects')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/>
+    </svg>
+    Projects
+  </div>
+</div>
 
 <!-- POSTS -->
 <div id="view-posts" class="view">
@@ -294,7 +372,7 @@
       <p>I don't post much on social media. A personal page felt like a more honest format, somewhere to write about what I'm learning, what I'm building, and the occasional thing worth putting into words. No algorithm, no performance.</p>
       <p>If something here is worth a conversation, my links are below.</p>
     </div>
-    <div style="display:flex; gap:0.75rem; padding-bottom: 6rem;">
+    <div class="social-row" style="display:flex; gap:0.75rem; padding-bottom: 6rem; flex-wrap:wrap;">
       <a href="https://x.com/EklavyaKatiyar0" target="_blank" rel="noopener" style="
         display:inline-flex; align-items:center; gap:0.45rem;
         padding: 0.45rem 0.9rem;
@@ -401,6 +479,10 @@ function navigate(view) {
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   const navEl = document.getElementById('nav-' + view);
   if (navEl) navEl.classList.add('active');
+
+  document.querySelectorAll('.bottom-nav-item').forEach(el => el.classList.remove('active'));
+  const bnavEl = document.getElementById('bnav-' + view);
+  if (bnavEl) bnavEl.classList.add('active');
 
   prevView = currentView;
   currentView = view;
