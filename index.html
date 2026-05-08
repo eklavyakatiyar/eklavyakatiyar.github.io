@@ -244,36 +244,20 @@
 <body>
 
 <nav>
-  <span class="nav-name" onclick="navigate('home')">Eklavya Katiyar</span>
+  <span class="nav-name" onclick="navigate('about')">Eklavya Katiyar</span>
   <ul class="nav-links">
-    <li><a href="#" id="nav-home"   onclick="navigate('home');     return false;">Home</a></li>
+    <li><a href="#" id="nav-about"  onclick="navigate('about');    return false;">About</a></li>
     <li><a href="#" id="nav-posts"  onclick="navigate('posts');    return false;">Posts</a></li>
     <li><a href="#" id="nav-projects" onclick="navigate('projects'); return false;">Projects</a></li>
-    <li><a href="#" id="nav-about"  onclick="navigate('about');    return false;">About</a></li>
   </ul>
 </nav>
-
-<!-- HOME -->
-<div id="view-home" class="view active">
-  <div class="wrap">
-    <div class="page-heading">
-      <h1>Documenting the journey.</h1>
-      <p>Ideas, case studies, and things I'm figuring out — mostly around data, AI and how business works.</p>
-    </div>
-    <div class="wip-msg">A lot more in progress — check back soon.</div>
-  </div>
-  <footer>
-    <span>Eklavya Katiyar · 2026</span>
-    <span>Built with HTML</span>
-  </footer>
-</div>
 
 <!-- POSTS -->
 <div id="view-posts" class="view">
   <div class="wrap">
     <div class="page-heading">
       <h1>Posts</h1>
-      <p>Things I write when something's worth putting down.</p>
+      <p>-</p>
     </div>
     <div class="post-list" id="posts-post-list"></div>
   </div>
@@ -288,7 +272,7 @@
   <div class="wrap">
     <div class="page-heading">
       <h1>Projects</h1>
-      <p>Things I've built or am building.</p>
+      <p>-</p>
     </div>
     <div class="placeholder">Coming soon.</div>
   </div>
@@ -299,17 +283,42 @@
 </div>
 
 <!-- ABOUT -->
-<div id="view-about" class="view">
+<div id="view-about" class="view active">
   <div class="wrap">
     <div class="page-heading">
-      <h1>About</h1>
-      <p>A little about who I am.</p>
+      <h1>Eklavya Katiyar</h1>
     </div>
-    <div class="post-body" style="padding: 2rem 0 6rem;">
-      <p>Hey! I'm Eklavya, a student at the School of Multidisciplinary Studies, IIM Bangalore.</p>
-      <p>This page exists because I wanted an online presence, one that's professional but still mine. I write about things I'm reflecting on, projects I'm working on, new experiences, and milestones worth documenting.</p>
-      <p>The idea was partly inspired by Sam Altman and Vitalik Buterin, both exceptional in their fields, and both people who simply write on their own pages. Not for virality, just because they have something to say. I'm not deeply versed in all their work, but that initiative stuck with me.</p>
-      <p>Being camera-shy and not particularly drawn to social media, a webpage felt right. It's not flashy, but it holds value and that suits both my personality and the kind of work I want to do.</p>
+    <div class="post-body" style="padding: 2rem 0 3rem;">
+      <p>I'm Eklavya, from Kanpur, currently an incoming student at IIM Bangalore's BSc Data Science &amp; AI program, part of its first batch.</p>
+      <p>I'm interested in the intersection of data, AI, and how businesses actually work. Not just the technical side, but the decisions behind it: what gets built, why, and for whom. That's the thread I'm following, and this page is where I document it.</p>
+      <p>I don't post much on social media. A personal page felt like a more honest format, somewhere to write about what I'm learning, what I'm building, and the occasional thing worth putting into words. No algorithm, no performance.</p>
+      <p>If something here is worth a conversation, my links are below.</p>
+    </div>
+    <div style="display:flex; gap:0.75rem; padding-bottom: 6rem;">
+      <a href="https://x.com/EklavyaKatiyar0" target="_blank" rel="noopener" style="
+        display:inline-flex; align-items:center; gap:0.45rem;
+        padding: 0.45rem 0.9rem;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        font-size: 0.78rem;
+        color: var(--grey);
+        transition: border-color 0.12s, color 0.12s;
+      " onmouseover="this.style.borderColor='#aaa';this.style.color='#111'" onmouseout="this.style.borderColor='var(--line)';this.style.color='var(--grey)'">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.741-8.851L1.254 2.25H8.08l4.253 5.622 5.912-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Twitter / X
+      </a>
+      <a href="https://www.linkedin.com/in/eklavya-katiyar-998112402/" target="_blank" rel="noopener" style="
+        display:inline-flex; align-items:center; gap:0.45rem;
+        padding: 0.45rem 0.9rem;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        font-size: 0.78rem;
+        color: var(--grey);
+        transition: border-color 0.12s, color 0.12s;
+      " onmouseover="this.style.borderColor='#aaa';this.style.color='#111'" onmouseout="this.style.borderColor='var(--line)';this.style.color='var(--grey)'">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
     </div>
   </div>
   <footer>
@@ -371,8 +380,8 @@ const posts = [
   }
 ].sort((a, b) => b.dateVal - a.dateVal);
 
-let prevView = 'home';
-let currentView = 'home';
+let prevView = 'about';
+let currentView = 'about';
 
 function renderPostList(containerId) {
   const el = document.getElementById(containerId);
@@ -415,7 +424,7 @@ function openPost(id) {
 
 // init
 renderPostList('posts-post-list');
-document.getElementById('nav-home').classList.add('active');
+document.getElementById('nav-about').classList.add('active');
 </script>
 </body>
 </html>
